@@ -12,7 +12,7 @@ const int L=200,N=3600,M=1200;
 int A[L][L],A1[L][L];
    for(int i=0;i<L;i++)
    {
-        for(int j=0;j<=L;j++)
+        for(int j=0;j<L;j++)
             {
                 A[i][j]=0;
                 A1[i][j]=0;
@@ -29,7 +29,7 @@ int fk,fk1,fkk,fk11,fkkk,fk111;
 int A2[3*N][3];
    for(int i=0;i<3*N;i++)
    {
-        for(int j=0;j<=3;j++)
+        for(int j=0;j<3;j++)
             {
                 A2[i][j]=0;
             }
@@ -44,7 +44,7 @@ while(i<N)
     b=rand()%L;
     c=rand()%6;
     fk=(a-B[c][0]+L)%L;
-    fk1=(b-B[c][1])%L;
+    fk1=(b-B[c][1]+L)%L;
     if(A[a][b]==0&&A[fk][fk1]==0)
     {
         A[a][b]=i,A[fk][fk1]=-i;
@@ -426,3 +426,4 @@ double min(double x,double y)
     }
     return z;
 }
+
